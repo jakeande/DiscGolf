@@ -1,6 +1,6 @@
 package com.JakeAnderson.DiscGolf.controllers;
 
-import com.JakeAnderson.DiscGolf.models.forms.User;
+import com.JakeAnderson.DiscGolf.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;

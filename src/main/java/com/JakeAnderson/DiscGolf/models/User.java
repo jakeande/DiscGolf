@@ -1,4 +1,4 @@
-package com.JakeAnderson.DiscGolf.models.forms;
+package com.JakeAnderson.DiscGolf.models;
 
 import org.hibernate.validator.constraints.Email;
 

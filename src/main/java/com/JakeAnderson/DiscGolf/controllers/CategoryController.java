@@ -1,7 +1,7 @@
 package com.JakeAnderson.DiscGolf.controllers;
 
 import com.JakeAnderson.DiscGolf.models.data.CategoryDao;
-import com.JakeAnderson.DiscGolf.models.forms.Category;
+import com.JakeAnderson.DiscGolf.models.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.JakeAnderson.DiscGolf.models.forms;
+package com.JakeAnderson.DiscGolf.models;
 
 
 import javax.persistence.*;
@@ -23,8 +23,8 @@ public class Course {
     @ManyToOne
     private Category category;
 
-//    @ManyToMany(mappedBy = "courses")
-//    private List<Menu> menus;
+    @ManyToMany(mappedBy = "courses")
+    private List<Menu> menus;
 
     public Course(String name, String description) {
         this.name = name;

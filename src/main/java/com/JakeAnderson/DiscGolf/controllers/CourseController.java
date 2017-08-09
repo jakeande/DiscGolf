@@ -2,6 +2,8 @@ package com.JakeAnderson.DiscGolf.controllers;
 
 import com.JakeAnderson.DiscGolf.models.data.CategoryDao;
 import com.JakeAnderson.DiscGolf.models.data.CourseDao;
+import com.JakeAnderson.DiscGolf.models.Category;
+import com.JakeAnderson.DiscGolf.models.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,13 +38,13 @@ public class CourseController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCoursesForm(Model model) {
         model.addAttribute("title", "Add Course");
-        model.addAttribute(new course());
+        model.addAttribute(new Course());
         model.addAttribute("categories", categoryDao.findAll());
         return "course/add";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddCoursesForm(@ModelAttribute @Valid course newCourse,
+    public String processAddCoursesForm(@ModelAttribute @Valid Course newCourse,
                                        Errors errors, @RequestParam int categoryId, Model model) {
 
         if (errors.hasErrors()) {
@@ -53,7 +55,7 @@ public class CourseController {
 
         Category cat = categoryDao.findOne(categoryId);
         newCourse.setCategory(cat);
-        courseDaoDao.save(newCourse);
+        courseDao.save(newCourse);
         return "redirect:";
     }
 
@@ -77,7 +79,7 @@ public class CourseController {
     @RequestMapping(value = "category", method = RequestMethod.GET)
     public String category(Model model, @RequestParam int id) {
         Category cat = categoryDao.findOne(id);
-        List<course> courses = cat.getCourses();
+        List<Course> courses = cat.getCourses();
         model.addAttribute("course", courses);
         model.addAttribute("title", "Course in Category: " + cat.getName());
         return "course/index";

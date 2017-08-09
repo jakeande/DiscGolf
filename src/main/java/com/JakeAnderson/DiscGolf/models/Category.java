@@ -1,4 +1,4 @@
-package com.JakeAnderson.DiscGolf.models.forms;
+package com.JakeAnderson.DiscGolf.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
