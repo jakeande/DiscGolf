@@ -23,8 +23,8 @@ public class Course {
     @ManyToOne
     private Category category;
 
-    @ManyToMany(mappedBy = "courses")
-    private List<Menu> menus;
+//    @ManyToOne//(mappedBy = "course")
+//    private List<Menu> menu;
 
     public Course(String name, String description) {
         this.name = name;
