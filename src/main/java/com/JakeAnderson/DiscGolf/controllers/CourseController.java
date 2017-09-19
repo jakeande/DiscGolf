@@ -1,7 +1,7 @@
 package com.JakeAnderson.DiscGolf.controllers;
 
-import com.JakeAnderson.DiscGolf.models.data.CategoryDao;
-import com.JakeAnderson.DiscGolf.models.data.CourseDao;
+import com.JakeAnderson.DiscGolf.models.dao.CategoryDao;
+import com.JakeAnderson.DiscGolf.models.dao.CourseDao;
 import com.JakeAnderson.DiscGolf.models.Category;
 import com.JakeAnderson.DiscGolf.models.Course;
 import org.springframework.beans.factory.annotation.Autowired;

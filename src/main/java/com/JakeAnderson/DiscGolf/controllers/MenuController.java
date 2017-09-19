@@ -3,8 +3,8 @@ package com.JakeAnderson.DiscGolf.controllers;
 
 import com.JakeAnderson.DiscGolf.models.Course;
 import com.JakeAnderson.DiscGolf.models.Menu;
-import com.JakeAnderson.DiscGolf.models.data.CourseDao;
-import com.JakeAnderson.DiscGolf.models.data.MenuDao;
+import com.JakeAnderson.DiscGolf.models.dao.CourseDao;
+import com.JakeAnderson.DiscGolf.models.dao.MenuDao;
 import com.JakeAnderson.DiscGolf.models.forms.AddMenuItemForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -28,13 +28,15 @@ ext {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-cloud-connectors')
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-dao-jpa')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('mysql:mysql-connector-java')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.security:spring-security-crypto')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
 }
 
 dependencyManagement {

@@ -1,7 +1,8 @@
 package com.JakeAnderson.DiscGolf.models;
 
 
-import org.dom4j.tree.AbstractEntity;
+
+import com.JakeAnderson.DiscGolf.models.forms.AbstractEntity;
 import org.springframework.scheduling.Trigger;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
