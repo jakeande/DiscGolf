@@ -15,6 +15,7 @@ import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class User extends AbstractEntity {
 
     @NotNull
@@ -25,9 +26,9 @@ public class User extends AbstractEntity {
     private String pwHash;
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    @OneToMany
-    @JoinColumn(name="user_id")
-    private List<Trigger> triggers = new ArrayList<>();
+//    @OneToMany
+//    @JoinColumn(name="user_id")
+//    private List<Trigger> triggers = new ArrayList<>();
 
     public User() {}
 
