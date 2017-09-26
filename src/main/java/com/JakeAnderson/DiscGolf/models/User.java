@@ -1,20 +1,15 @@
 package com.JakeAnderson.DiscGolf.models;
 
-
-
 import com.JakeAnderson.DiscGolf.models.forms.AbstractEntity;
-import org.springframework.scheduling.Trigger;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * Created by LaunchCode
+ */
 @Entity
 public class User extends AbstractEntity {
 
@@ -26,20 +21,23 @@ public class User extends AbstractEntity {
     private String pwHash;
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-//    @OneToMany
-//    @JoinColumn(name="user_id")
-//    private List<Trigger> triggers = new ArrayList<>();
-
     public User() {}
 
     public User(String username, String password) {
         this.username = username;
         this.pwHash = hashPassword(password);
     }
-    public String getUsername() { return username; }
 
-    private static String hashPassword(String password) { return encoder.encode(password);}
+    public String getUsername() {
+        return username;
+    }
 
-    public boolean isMatchingPassword(String password) {return encoder.matches(password, pwHash); }
+    private static String hashPassword(String password) {
+        return encoder.encode(password);
+    }
+
+    public boolean isMatchingPassword(String password) {
+        return encoder.matches(password, pwHash);
+    }
 
 }
