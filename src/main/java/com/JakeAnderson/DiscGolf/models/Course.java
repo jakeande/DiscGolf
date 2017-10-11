@@ -21,10 +21,10 @@ public class Course {
     private String description;
 
     @ManyToOne
-    private Category category;
+    private Category category; // put in course here take out the many to many, menu will turn into my category
 
-//    @ManyToOne//(mappedBy = "course")
-//    private List<Menu> menu;
+//    @ManyToMany(mappedBy = "course")
+//    private List<Menu> menus;
 
     public Course(String name, String description) {
         this.name = name;
