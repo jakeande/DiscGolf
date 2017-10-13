@@ -1,6 +1,7 @@
 package com.JakeAnderson.DiscGolf.models;
 
 
+import org.hibernate.annotations.ManyToAny;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -13,7 +14,6 @@ public class Course {
     private int id;
 
     @NotNull
-    @Size(min=3, max=15)
     private String name;
 
     @NotNull
@@ -21,10 +21,10 @@ public class Course {
     private String description;
 
     @ManyToOne
-    private Category category;
+    @JoinColumn( name= "course_id")
+    private Menu menus;
 
-//    @ManyToOne//(mappedBy = "course")
-//    private List<Menu> menu;
+//
 
     public Course(String name, String description) {
         this.name = name;
@@ -53,11 +53,11 @@ public class Course {
         this.description = description;
     }
 
-    public Category getCategory() {
-        return category;
+    public Menu getMenu() {
+        return menus;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setMenu(Menu menu) {
+        this.menus = menu;
     }
 }

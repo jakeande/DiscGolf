@@ -16,9 +16,9 @@ import javax.validation.Valid;
 @Controller
 public class AuthenticationController extends AbstractController {
 
-    @RequestMapping(value = "")
+    @RequestMapping(value = "/")
     public String index() {
-        return "index";
+        return "user/index";
     }
 
     @RequestMapping(value = "/register")
@@ -38,24 +38,24 @@ public class AuthenticationController extends AbstractController {
         User existingUser = userDao.findByUsername(form.getUsername());
 
         if (existingUser != null) {
-            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
+            errors.rejectValue("username", "username.already exists", "A user with that username already exists");
         }
 
         User newUser = new User(form.getUsername(), form.getPassword());
         userDao.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
-        return "/redirect:";
+        return "course/index";
     }
 
-    @RequestMapping(value = "user/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model) {
         model.addAttribute(new LoginForm());
         model.addAttribute("title", "Log In");
         return "user/login";
     }
 
-    @RequestMapping(value = "user/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute @Valid LoginForm form, Errors errors, HttpServletRequest request) {
 
         if (errors.hasErrors()) {

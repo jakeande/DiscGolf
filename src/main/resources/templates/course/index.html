@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${courses} and ${courses.size()}">no course :(</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Menu</th>
+    </tr>
+
+    <tr th:each="course : ${courses}">
+        <td th:text="${course.name}"></td>
+        <td th:text="${course.description}"></td>
+        <td th:text="${course.menu.name}"></td>
+    </tr>
+
+</table>
+<a href="/course/add">Add</a> |
+<a href="/course/remove">Remove</a>
+
+<div class="pac-card" id="pac-card">
+    <div>
+        <div id="title">
+            <span th:text="'Find the ' + ${course.name}"></span>
+        </div> <br/>
+    </div>
+    <div id="pac-container">
+        <input id="pac-input" type="text"
+               placeholder="Enter a location"/>
+    </div>
+</div>
+<div id="map"></div>
+<div id="infowindow-content">
+    <img src="" width="16" height="16" id="place-icon"></img>
+    <span id="place-name"  class="title"></span><br/>
+    <span id="place-address"></span>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpzQG86jnprvb6gy0QDT-0b3JXrRmf4I0&amp;libraries=places&amp;callback=initMap"></script>
+</body>
+</html>

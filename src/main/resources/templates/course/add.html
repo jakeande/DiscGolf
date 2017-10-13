@@ -19,12 +19,12 @@
     </div>
 
     <div class="form-group">
-        <label th:for="category">Category</label>
-        <select th:name="categoryId">
-            <option th:each="category : ${categories}"
-                    th:text="${category.name}"
-                    th:value="${category.id}"></option>
-            <!--<span th:errors="*"-->
+        <label th:for="menu">Menu</label>
+        <select th:name="menuID">
+            <option th:each="menu : ${menus}"
+                    th:text="${menu.name}"
+                    th:value="${menu.id}"></option>
+            <!--<span th:errors="*{menu}"</span>-->
         </select>
     </div>
 

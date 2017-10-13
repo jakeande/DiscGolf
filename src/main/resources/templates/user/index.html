@@ -5,9 +5,9 @@
 <body class="container">
 
 <nav th:replace="fragments :: navigation"></nav>
-
+<div th:if="${user}">
 <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
-
+</div>
 </body>
 </html>
